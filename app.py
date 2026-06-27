@@ -4,7 +4,11 @@ from dotenv import load_dotenv
 import os
 import json
 import uuid
+
 import hashlib
+
+import hashlib
+
 
 load_dotenv()
 
@@ -13,10 +17,6 @@ app = Flask(__name__)
 client = MongoClient(os.getenv("MONGO_URI"))
 
 db = client["student_db"]
-collection = db["students"]
-
-db = client["student_db"]
-
 collection = db["students"]
 todo_collection = db["todo_items"]   # New collection
 
@@ -50,9 +50,19 @@ def submit():
         item_hash = hashlib.sha256(hash_string.encode()).hexdigest()
 
         student = {
+
             "item_id": next_id,
             "item_uuid": str(uuid.uuid4()),
             "item_hash": item_hash,
+
+            "item_id": 1,
+            "item_uuid": str(uuid.uuid4()),
+             
+
+            "item_id": next_id,
+            "item_uuid": str(uuid.uuid4()),
+            "item_hash": item_hash,
+
             "name": request.form["name"],
             "email": request.form["email"]
         }
