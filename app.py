@@ -13,6 +13,10 @@ client = MongoClient(os.getenv("MONGO_URI"))
 db = client["student_db"]
 collection = db["students"]
 
+db = client["student_db"]
+
+collection = db["students"]
+todo_collection = db["todo_items"]   # New collection
 
 @app.route('/')
 def home():
