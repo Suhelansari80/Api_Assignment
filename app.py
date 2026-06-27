@@ -4,7 +4,10 @@ from dotenv import load_dotenv
 import os
 import json
 import uuid
+<<<<<<< HEAD
 import hashlib
+=======
+>>>>>>> 78fdee7 (Added Item UUID)
 
 load_dotenv()
 
@@ -50,9 +53,14 @@ def submit():
         item_hash = hashlib.sha256(hash_string.encode()).hexdigest()
 
         student = {
+<<<<<<< HEAD
             "item_id": next_id,
             "item_uuid": str(uuid.uuid4()),
             "item_hash": item_hash,
+=======
+            "item_id": 1,
+            "item_uuid": str(uuid.uuid4()),
+>>>>>>> 78fdee7 (Added Item UUID)
             "name": request.form["name"],
             "email": request.form["email"]
         }
