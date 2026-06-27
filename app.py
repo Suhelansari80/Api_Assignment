@@ -36,6 +36,7 @@ def submit():
     try:
 
         student = {
+            "item_id": 1,
             "name": request.form["name"],
             "email": request.form["email"]
         }
