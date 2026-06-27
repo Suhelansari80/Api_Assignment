@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Page</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+        .container{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            width:400px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+        }
+        h2{
+            text-align:center;
+        }
+        input, textarea{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            margin-bottom:15px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+        button{
+            width:100%;
+            padding:10px;
+            background:#007bff;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+        button:hover{
+            background:#0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>To-Do Form</h2>
+
+    <form action="/submittodoitem" method="POST">
+
+        <label>Item Name</label>
+        <input type="text" name="itemName" required>
+
+        <label>Item Description</label>
+        <textarea name="itemDescription" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

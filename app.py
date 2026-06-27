@@ -57,5 +57,25 @@ def success():
     return render_template("success.html")
 
 
+@app.route('/submittodoitem', methods=['POST'])
+def submittodoitem():
+    try:
+        todo = {
+            "itemName": request.form["itemName"],
+            "itemDescription": request.form["itemDescription"]
+        }
+
+        db["todo_items"].insert_one(todo)
+
+        return jsonify({
+            "message": "Todo item saved successfully"
+        }), 201
+
+    except Exception as e:
+        return jsonify({
+            "error": str(e)
+        }), 500
+
+
 if __name__ == "__main__":
     app.run(debug=True)
